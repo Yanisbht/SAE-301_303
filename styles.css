@@ -1,0 +1,25 @@
+/* Custom styles for hero section */
+#hero {
+  height: 100vh;
+  background: url('../SAE_301_303/img/fond.jpg') no-repeat center center/cover;
+}
+
+#hero h1 {
+  animation: fadeInDown 1.5s;
+}
+
+.card.hover-effect:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+footer form input:hover {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+}
+
