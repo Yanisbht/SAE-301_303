@@ -1,0 +1,28 @@
+/* Custom styles for hero section */
+#hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('img/img_fondart5.jpg') no-repeat center center/cover;
+    
+  }
+  
+  #hero h1 {
+    animation: fadeInDown 1.5s;
+  }
+  
+  .card.hover-effect:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  footer form input:hover {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+  }
+  
+  body {
+    font-family: Times, Times New Roman, serif;
+  }
+  
+  
