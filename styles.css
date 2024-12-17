@@ -1,7 +1,15 @@
 /* Custom styles for hero section */
 #hero {
-  height: 50vh;
-  background: url('img/imgfond.jpg') no-repeat center center/cover;
+  height: 70vh;
+  background: url('../img/imgfond.jpg') no-repeat center center/cover;
+}
+
+#hero2 {
+  height: 80vh;
+  background: url('../img/art1.jpg') no-repeat center center/cover;
+  background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 #hero h1 {
@@ -22,4 +30,151 @@ footer form input:hover {
 body {
   font-family: Times, Times New Roman, serif;
 }
+
+.navbar {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  backdrop-filter: blur(5px);
+}
+
+/* Styles pour les éléments de la navbar */
+.navbar-nav .nav-link {
+  transition: all 0.3s ease; /* Animation fluide */
+  position: relative; /* Nécessaire pour l'effet flou */
+  z-index: 1; /* Met le lien au-dessus du flou */
+}
+
+/* Effets au survol */
+.navbar-nav .nav-link:hover {
+  transform: scale(1.2); /* Grossissement */
+  
+}
+
+/* Fond flou au survol */
+.navbar-nav .nav-link:hover::before {
+  content: ""; /* Élément pseudo avant pour l'arrière-plan flou */
+  position: absolute;
+  top: 0; /* Aligne en haut de l'élément */
+  left: 0; /* Aligne à gauche de l'élément */
+  width: 100%; /* Même largeur que le lien */
+  height: 100%; /* Même hauteur que la navbar */
+  background: rgba(211, 211, 211, 0.5); /* Gris clair semi-transparent */
+  backdrop-filter: blur(5px); /* Effet de flou */
+  z-index: -1; /* Derrière le lien */
+}
+
+/* Styles de base pour le dropdown */
+.nav-item.dropdown {
+  position: relative; /* Nécessaire pour positionner le menu */
+}
+
+.nav-item.dropdown .dropdown-menu {
+  display: none; /* Masque les éléments par défaut */
+  position: absolute; /* Positionne le menu déroulant */
+  top: 100%; /* Aligne juste en dessous du parent */
+  left: 0;
+  background-color: white; /* Fond blanc (ou personnalisé) */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour le menu */
+  z-index: 1000; /* S'assure que le menu est au-dessus des autres éléments */
+  padding: 0; /* Supprime les marges internes par défaut */
+}
+
+/* Affiche le dropdown au survol */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Affiche le menu */
+}
+
+/* Optionnel : améliorer l'apparence des items */
+.dropdown-item {
+  padding: 10px 20px; /* Espacement des items */
+  font-size: 16px; /* Taille de police */
+  transition: background-color 0.3s ease; /* Animation de fond fluide */
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa; /* Fond légèrement gris clair au survol */
+  color: #000; /* Texte noir au survol */
+}
+
+.intro{
+  margin-top: 30px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.mb-45 {
+  display: inline; /* Adapte l'arrière-plan à la largeur du texte */
+  text-align: center;
+  font-size: 80px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 6px;
+  text-underline-offset: 4px;
+  text-decoration-color: black;
+  background-color: rgba(0, 128, 0, 0.5); /* Couleur de l'arrière-plan */
+  padding: 0 5px; /* Optionnel : espace horizontal autour du texte */
+}
+
+.info1{
+  font-size: 32.5px;
+  text-align: left;
+}
+
+.info2{
+  font-size: 32.5px;
+  text-align: left;
+
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optionnel : pour centrer verticalement */
+}
+
+img.famille {
+  width: 1200px;
+  padding-bottom: 100px;
+}
+
+.biodat1 {
+  text-align: center; /* Centrer horizontalement le texte */
+  font-size: 100px; /* Garder la taille de police spécifiée */
+  margin: 20px 0; /* Espacement vertical */
+  text-decoration: underline black;
+  text-decoration-thickness: 6px;
+}
+
+.biodat2 {
+  text-align: center; /* Centrer horizontalement le texte */
+  font-size: 50px; /* Garder la taille de police spécifiée */
+  margin: 20px 200px; /* Espacement vertical */
+  margin-bottom: 150px;
+}
+
+.highlight {
+  text-decoration: underline; /* Souligner le texte */
+  color: green; /* Mettre le texte en vert */
+  font-size: 60px;
+}
+
+
+
+
+
+
+
+
+
+
 
