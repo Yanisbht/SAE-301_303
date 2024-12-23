@@ -1,116 +1,175 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Vérifiez que Chart.js est inclus dans votre projet
-    // <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    // Chargement des données CSV
+    d3.csv("data.csv").then(function (data) {
+        console.log("Données chargées :", data);
 
-    // Graphique 1 : Impact des traitements aériens
-    // Données des modes d'action associés aux méthodes
-    // Données brutes
-    const data = [
-        "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Sol", "Sol", "Sol", "Sol", "Aérienne", "Sol", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Sol", "Aérienne", "Sol", "Sol", "Sol", "Aérienne", "Sol", "Sol", "Aérienne", "Sol", "Aérienne", "Sol", "Sol", "Sol", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Aérienne", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Sol", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Sol", "Sol", "Sol", "Sol", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Aérienne", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Aérienne", "Sol", "Sol", "Aérienne", "Aérienne", "Sol"
-    ];
+        // Premier graphique : Répartition des traitements
+        const countsParties = data.reduce((acc, row) => {
+            const type = row['Partie traitée']; // Remplacez par la colonne réelle
+            acc[type] = (acc[type] || 0) + 1;
+            return acc;
+        }, {});
 
-    // Calcul des occurrences
-    const counts = data.reduce((acc, type) => {
-        acc[type] = (acc[type] || 0) + 1;
-        return acc;
-    }, {});
+        const totalParties = Object.values(countsParties).reduce((sum, count) => sum + count, 0);
+        const labelsParties = Object.keys(countsParties);
+        const percentagesParties = labelsParties.map(label => ((countsParties[label] / totalParties) * 100).toFixed(2));
 
-    // Calcul des pourcentages
-    const total = data.length;
-    const labels = Object.keys(counts);
-    const percentages = labels.map(label => (counts[label] / total * 100).toFixed(2));
-
-    // Création du graphique
-    const ctx = document.getElementById('partiesTraiteesChart').getContext('2d');
-    const partiesTraiteesChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: percentages,
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)'
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Répartition des Parties Traitées : Aérienne vs Sol'
+        const ctxParties = document.getElementById('partiesTraiteesChart').getContext('2d');
+        new Chart(ctxParties, {
+            type: 'pie',
+            data: {
+                labels: labelsParties,
+                datasets: [{
+                    data: percentagesParties,
+                    backgroundColor: ['#36A2EB', '#FF6384', '#4BC0C0'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    }
                 }
             }
-        }
-    });
+        });
 
-    // Données brutes
-    const data_mode = [
-        "Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes","Antagonisme et stimulateur de défense des plantes",
-    "Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes","Stimulateur des défenses des plantes",
-    "Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites","Fongicide de contact multi-sites",
-    "Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion","Ingestion",
-    "Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre",
-    "Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre",
-    "Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre","Autre"
+        // Deuxième graphique : Répartition des groupes ciblés
+const countsGroupesCibles = data.reduce((acc, row) => {
+const groupeCible = row['Groupe ciblé']; // Remplacez par la colonne réelle
+acc[groupeCible] = (acc[groupeCible] || 0) + 1;
+return acc;
+}, {});
 
-    ];
+const totalGroupesCibles = Object.values(countsGroupesCibles).reduce((sum, count) => sum + count, 0);
+const labelsGroupesCibles = Object.keys(countsGroupesCibles);
+const percentagesGroupesCibles = labelsGroupesCibles.map(label => ((countsGroupesCibles[label] / totalGroupesCibles) * 100).toFixed(2));
 
-    const counts_mode = data_mode.reduce((acc, mode) => {
-        acc[mode] = (acc[mode] || 0) + 1;
-        return acc;
-    }, {});
-    
-    // Calcul des pourcentages
-    const total_mode = data_mode.length;
-    const labels_mode = Object.keys(counts_mode);
-    const percentages_mode = labels_mode.map(label => (counts_mode[label] / total_mode * 100).toFixed(2));
-    
-    // Création du graphique
-    const ctx_mode = document.getElementById('modesActionChart').getContext('2d'); // Utilisation de ctx_mode
-    const modesActionChart = new Chart(ctx_mode, { // Remplacer ctx par ctx_mode
-        type: 'doughnut',
-        data: {
-            labels: labels_mode,
-            datasets: [{
-                data: percentages_mode,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(255, 159, 64, 0.6)',
-                    'rgba(201, 203, 207, 0.6)',
-                    'rgba(102, 204, 0, 0.6)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(201, 203, 207, 1)',
-                    'rgba(102, 204, 0, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Répartition des Modes d’Action'
-                }
-            }
-        }
-    });    
+// Regrouper les groupes avec moins de 5% dans un groupe "Autre"
+let otherCountGroupesCibles = 0;
+const newLabelsGroupesCibles = [];
+const newPercentagesGroupesCibles = [];
+const newBackgroundColorsGroupesCibles = [];
+const colorsGroupesCibles = [
+'rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)',
+'rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)',
+'rgba(201, 203, 207, 0.6)', 'rgba(102, 204, 0, 0.6)'
+];
+
+// Parcours des données pour créer les nouvelles listes avec le groupe "Autre"
+labelsGroupesCibles.forEach((label, index) => {
+const percentage = parseFloat(percentagesGroupesCibles[index]);
+
+if (percentage < 5) {
+// Ajouter à "Autre"
+otherCountGroupesCibles += countsGroupesCibles[label];
+} else {
+newLabelsGroupesCibles.push(label);
+newPercentagesGroupesCibles.push(percentage);
+newBackgroundColorsGroupesCibles.push(colorsGroupesCibles[newLabelsGroupesCibles.length - 1] || 'rgba(201, 203, 207, 0.6)');
+}
+});
+
+// Ajouter "Autre" si nécessaire
+if (otherCountGroupesCibles > 0) {
+newLabelsGroupesCibles.push('Autre');
+newPercentagesGroupesCibles.push(((otherCountGroupesCibles / totalGroupesCibles) * 100).toFixed(2));
+newBackgroundColorsGroupesCibles.push('rgba(0, 0, 0, 0.6)'); // Couleur pour "Autre"
+}
+
+const ctxGroupesCibles = document.getElementById('groupecible').getContext('2d');
+new Chart(ctxGroupesCibles, {
+type: 'bar',
+data: {
+labels: newLabelsGroupesCibles,
+datasets: [{
+    data: newPercentagesGroupesCibles,
+    backgroundColor: newBackgroundColorsGroupesCibles,
+    borderWidth: 1
+}]
+},
+options: {
+responsive: true,
+plugins: {
+    title: {
+        display: true,
+        text: 'Répartition des groupes ciblés'
+    }
+}
+}
+});
+
+
+
+// Deuxième graphique : Répartition des modes d'action
+const countsModesAction = data.reduce((acc, row) => {
+const modeAction = row['Mode d\'action']; // Remplacez par la colonne réelle
+acc[modeAction] = (acc[modeAction] || 0) + 1;
+return acc;
+}, {});
+
+const totalModesAction = Object.values(countsModesAction).reduce((sum, count) => sum + count, 0);
+const labelsModesAction = Object.keys(countsModesAction);
+const percentagesModesAction = labelsModesAction.map(label => ((countsModesAction[label] / totalModesAction) * 100).toFixed(2));
+
+// Regrouper les modes d'action avec moins de 5% dans un groupe "Autre"
+let otherCountModesAction = 0;
+const newLabelsModesAction = [];
+const newPercentagesModesAction = [];
+const newBackgroundColorsModesAction = [];
+const colorsModesAction = [
+'rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)',
+'rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)',
+'rgba(201, 203, 207, 0.6)', 'rgba(102, 204, 0, 0.6)'
+];
+
+// Parcours des données pour créer les nouvelles listes avec le groupe "Autre"
+labelsModesAction.forEach((label, index) => {
+const percentage = parseFloat(percentagesModesAction[index]);
+
+if (percentage < 4) {
+// Ajouter à "Autre"
+otherCountModesAction += countsModesAction[label];
+} else {
+newLabelsModesAction.push(label);
+newPercentagesModesAction.push(percentage);
+newBackgroundColorsModesAction.push(colorsModesAction[newLabelsModesAction.length - 1] || 'rgba(201, 203, 207, 0.6)');
+}
+});
+
+// Ajouter "Autre" si nécessaire
+if (otherCountModesAction > 0) {
+newLabelsModesAction.push('Autre');
+newPercentagesModesAction.push(((otherCountModesAction / totalModesAction) * 100).toFixed(2));
+newBackgroundColorsModesAction.push('rgba(0, 0, 0, 0.6)'); // Couleur pour "Autre"
+}
+
+const ctxModesAction = document.getElementById('modedaction').getContext('2d');
+new Chart(ctxModesAction, {
+type: 'doughnut',
+data: {
+labels: newLabelsModesAction,
+datasets: [{
+    data: newPercentagesModesAction,
+    backgroundColor: newBackgroundColorsModesAction,
+    borderWidth: 1
+}]
+},
+options: {
+responsive: true,
+plugins: {
+    title: {
+        display: true,
+        text: 'Répartition des modes d\'action'
+    }
+}
+}
+});
+});
 });
