@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +8,46 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles5.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="navbar navbar-expand-lg bg-white shadow sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">BP</a>
+      <a class="navbar-brand" href="./index.html" style="color: white;">BP</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <!-- Zone qui déclenche le défilement de la navbar -->
-          <div class="navbar-toggler" id="navbarToggler">
-            <span class="navbar-toggler-icon"></span>
-          </div>
-      
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a></li>
+          <!-- Menu déroulant -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+              Parties
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
               <li class="nav-item"><a class="nav-link" href="#part_ext">Parties aériennes</a></li>
-              <li class="nav-item"><a class="nav-link" href="#part_sous">Parties Souterraines</a></li>
               <li class="nav-item"><a class="nav-link" href="#mode_action">Modes d'actions</a></li>
               <li class="nav-item"><a class="nav-link" href="#etude_cas">Etudes de cas</a></li>
               <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
             </ul>
-          </div>
-        </div>
-      </nav>
-      
-    </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#contact" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a></li>
+        </ul>
+      </div>
   </header>
 
   <!-- Hero Section -->
   <section id="hero" class="d-flex align-items-center bg-success text-white">
     <div class="container text-center">
-      <h1 class="display-4 fw-bold">Biocontrôle : Les parties traitées</h1>
+      <h1 class="display-4 fw-bold">Le Biocontrôle en Action : Parties et Méthodes</h1>
       <p class="lead">
-        Découvrez comment le biocontrôle s'adapte aux cultures en pleine terre et sous abri pour une agriculture durable.
+        Découvrez comment le biocontrôle agit au cœur des écosystèmes pour une agriculture durable et respectueuse de l’environnement.
       </p>
     </div>
   </section>
@@ -57,19 +58,19 @@
         <div class="row align-items-center">
             <!-- Texte à gauche -->
             <div class="col-md-6">
-                <p>
-                    Dans un contexte où l’agriculture durable est une priorité, le biocontrôle s’impose comme une alternative écologique aux traitements chimiques traditionnels. En ciblant spécifiquement les parties aériennes (feuilles, tiges) et souterraines (racines, sol), il est possible d’adopter des solutions plus précises et respectueuses de l’environnement.
-                </p>
-                <p>
-                    Cette spécialisation des traitements permet d’optimiser leur efficacité tout en limitant leur impact sur les écosystèmes. Les parties aériennes, souvent exposées aux nuisibles et aux maladies, nécessitent des interventions rapides et directes, tandis que les parties souterraines bénéficient d’approches durables favorisant la santé globale des sols.
-                </p>
-                <h4>Objectifs de cet article :</h4>
-                <ul>
-                    <li>Explorer les avantages uniques des traitements aériens et souterrains.</li>
-                    <li>Mettre en lumière les différents modes d’action du biocontrôle (répulsion, prédation, parasitisme, inhibition).</li>
-                    <li>Illustrer ces concepts par des études de cas et des données graphiques.</li>
-                    <li>En combinant science et pratique, nous montrerons comment une approche ciblée peut transformer les pratiques agricoles.</li>
-                </ul>
+              <p>
+                Face à la nécessité d’une agriculture durable, le biocontrôle se distingue comme une alternative respectueuse de l’environnement aux solutions chimiques traditionnelles. En ciblant spécifiquement les parties aériennes (feuilles, tiges) et souterraines (racines, sol), il offre des traitements adaptés pour une gestion efficace des cultures.
+            </p>
+            <p>
+                Cette approche ciblée maximise l’efficacité des interventions tout en réduisant leur impact sur les écosystèmes. Les parties aériennes, fréquemment exposées aux ravageurs et aux maladies, nécessitent des solutions rapides et spécifiques, tandis que les parties souterraines bénéficient de stratégies favorisant la santé des sols et leur fertilité à long terme.
+            </p>
+            <h4>Objectifs de cet article :</h4>
+            <ul>
+                <li>Analyser les bénéfices distincts des traitements aériens et souterrains.</li>
+                <li>Présenter les différents modes d’action du biocontrôle (répulsion, prédation, parasitisme, inhibition).</li>
+                <li>Illustrer ces approches par des exemples concrets et des données visuelles.</li>
+                <li>Démontrer comment une application ciblée peut révolutionner les pratiques agricoles grâce à une synergie entre science et terrain.</li>
+            </ul>            
             </div>
             <!-- Image à droite avec offset -->
             <div class="col-md-5 offset-md-1 text-center">
@@ -112,66 +113,66 @@
   </div>
 </section>
 
-<section id="mode_action" class="py-5 bg-light">
+<section id="mode_action" class="py-5 ">
   <div class="container">
     <div class="row align-items-center">
       <!-- Texte à gauche -->
       <h2 class="text-center mb-4">Modes d’action des biocontrôles</h2>
       <div class="col-md-6">
         <ul>
-          <li><strong>Répulsion :</strong> Cette méthode repose sur l'utilisation d'huiles essentielles, comme la menthe poivrée, la citronnelle ou l'eucalyptus, pour repousser les insectes nuisibles tels que les pucerons, les moustiques et autres ravageurs. Ces substances agissent en perturbant les sens des insectes, les éloignant sans les tuer, ce qui est bénéfique pour l'environnement.</li><br>
-          
-          <li><strong>Prédation :</strong> L'introduction d'insectes auxiliaires, tels que les coccinelles, les chrysopes ou les syrphes, permet de réguler naturellement les populations de nuisibles. Ces insectes se nourrissent des ravageurs, comme les pucerons, et contribuent ainsi à maintenir un équilibre écologique dans les cultures, sans recourir à des produits chimiques.</li><br>
-          
-          <li><strong>Parasitisme :</strong> Cette méthode implique l'utilisation de guêpes parasitoïdes, telles que <i>Trichogramma</i>, ou de champignons pathogènes comme <i>Beauveria bassiana</i>, qui parasitent et tuent les insectes nuisibles. Les parasitoïdes pondent leurs œufs dans les ravageurs, et leurs larves les consomment de l'intérieur, offrant un contrôle très ciblé des populations indésirables.</li><br>
-          
-          <li><strong>Inhibition :</strong> Des micro-organismes bénéfiques, comme certaines bactéries et champignons (ex : <i>Trichoderma</i>), sont utilisés pour inhiber le développement des pathogènes dans le sol. Ces agents de biocontrôle agissent en compétant avec les micro-organismes pathogènes, ou en produisant des substances qui empêchent leur croissance, assurant ainsi une protection naturelle des plantes contre les maladies.</li>
+          <li><strong>Répulsion :</strong> Utilise des huiles essentielles comme la menthe poivrée ou la citronnelle pour repousser les nuisibles (pucerons, moustiques) en perturbant leurs sens. Une méthode écologique qui éloigne sans tuer.</li><br>
+      
+          <li><strong>Prédation :</strong> L’introduction d’insectes auxiliaires, comme les coccinelles ou chrysopes, permet de réguler naturellement les nuisibles. Ces insectes se nourrissent des ravageurs et maintiennent un équilibre écologique.</li><br>
+      
+          <li><strong>Parasitisme :</strong> Utilise des guêpes parasitoïdes (<i>Trichogramma</i>) ou champignons pathogènes (<i>Beauveria bassiana</i>) qui parasitent les nuisibles. Les larves consomment les ravageurs de l’intérieur pour un contrôle ciblé.</li><br>
+      
+          <li><strong>Inhibition :</strong> Des micro-organismes comme les bactéries ou champignons (<i>Trichoderma</i>) inhibent les pathogènes en compétant avec eux ou en stimulant les défenses naturelles des plantes.</li><br>
+      
+          <li><strong>Ingestion :</strong> Repose sur l’absorption de substances par les nuisibles, perturbant leur métabolisme et réduisant efficacement leur population.</li><br>
+      
+          <li><strong>Autre :</strong> Comprend des fongicides de contact multi-sites, agissant simultanément sur plusieurs points pour stopper les pathogènes tout en limitant les résistances.</li>
         </ul>
-        
-        
       </div>
+      
       <!-- Graphique 3 à droite -->
       <div class="col-md-6">
-        <canvas id="modesActionChart"></canvas>
+        <canvas id="modedaction"></canvas>
       </div>
     </div>
   </div>
 </section>
 
 
-<section id="etude_cas" class="py-5">
-  <div class="container text-center my-5">
-    <h2 class="mb-4">Études de cas</h2>
-  
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h4>Cas 1 : Traitement des vignes (parties aériennes)</h4>
-        <p>Dans ce cas, des trichogrammes, des guêpes parasitoïdes, sont utilisés pour protéger les feuilles des vignes contre les insectes nuisibles, notamment les vers de la grappe. Les trichogrammes pondent leurs œufs dans les œufs des ravageurs, empêchant leur développement et réduisant ainsi la population de nuisibles. Résultat : une diminution significative des infestations d'insectes, permettant une meilleure santé des vignes et une réduction de l'utilisation de traitements chimiques.</p>
-      </div>
-    </div>
-  
-    <div class="row justify-content-center mt-4">
-      <div class="col-md-8">
-        <h4>Cas 2 : Cultures maraîchères (traitement souterrain)</h4>
-        <p>Pour les cultures maraîchères, des champignons bénéfiques comme <i>Trichoderma</i> sont appliqués dans le sol pour lutter contre les pathogènes du sol tels que <i>Fusarium</i> et <i>Rhizoctonia</i>. Ces champignons agissent en compétition avec les agents pathogènes, en les parasitant ou en produisant des substances antifongiques. Résultat : une augmentation du rendement des cultures grâce à la réduction des maladies du sol, ce qui conduit à une récolte plus saine et une meilleure productivité des plantes.</p>
-      </div>
-    </div>
-  </div>
+<section id="groupe_cible" class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Texte à gauche -->
+      <!-- Graphique 3 à gauche -->
       <div class="col-md-6">
-        <p>Graphique 3 : Répartition des modes d’action selon les types de traitements</p>
-        <canvas id="graphique4"></canvas>
+        <canvas id="groupecible"></canvas>
       </div>
-      <!-- Graphique 3 à droite -->
+
+      <!-- Texte à droite -->
       <div class="col-md-6">
-        <p>Graphique 4 : Réduction des infestations foliaires grâce aux trichogrammes        </p>
-        <canvas id="graphique5"></canvas>
+        <h2 class="text-center mb-4">Groupes Ciblés du Biocontrôle</h2>
+        <ul>
+          <li><strong>Ascomycètes :</strong> Les ascomycètes sont des champignons pathogènes qui peuvent causer des maladies sur diverses plantes. Le biocontrôle utilise des champignons antagonistes ou des micro-organismes pour inhiber leur développement et protéger les cultures.</li><br>
+      
+          <li><strong>Hémiptères :</strong> Ce groupe inclut des insectes tels que les cochenilles et les cicadelles. Les biocontrôles ciblent ces nuisibles en utilisant des prédateurs naturels, comme des coccinelles, ou des méthodes répulsives pour limiter leurs effets sur les plantes.</li><br>
+      
+          <li><strong>Lépidoptères :</strong> Les lépidoptères, comme les chenilles, sont des ravageurs fréquents des cultures. Les solutions de biocontrôle incluent des insectes auxiliaires qui parasitent les œufs et les larves, ou l’utilisation de bactéries spécifiques qui agissent contre ces nuisibles.</li><br>
+      
+          <li><strong>Pucerons :</strong> Les pucerons, un type d'hémiptères, sont souvent contrôlés par des prédateurs naturels comme les coccinelles ou par des traitements biologiques qui perturbent leur reproduction et leur alimentation, contribuant ainsi à leur régulation.</li><br>
+      
+          <li><strong>Acariens :</strong> Les acariens, notamment les tétranyques, sont des parasites qui affectent de nombreuses cultures. Le biocontrôle utilise des prédateurs tels que des acariens phytoseiids ou des agents pathogènes spécifiques pour limiter leur population et éviter les dommages aux plantes.</li><br>
+      
+          <li><strong>Autres groupes :</strong> D’autres groupes de nuisibles, tels que certains coléoptères ou pathogènes bactériens, sont également ciblés par des méthodes de biocontrôle adaptées pour chaque type de ravageur.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 <!-- Section 5 : Conclusion et perspectives -->
@@ -202,8 +203,6 @@
   </div>
 </div>
 </section>
-
-
 </div>
 
 <!-- Footer Section -->
@@ -213,6 +212,7 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
 <script src="script.js"></script>
 </body>
 </html>
