@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     d3.csv("data.csv").then(function (data) {
         console.log("Données chargées :", data);
 
-        // Premier graphique : Répartition des traitements
         const countsParties = data.reduce((acc, row) => {
-            const type = row['Partie traitée']; // Remplacez par la colonne réelle
+            const type = row['Partie traitée']; 
             acc[type] = (acc[type] || 0) + 1;
             return acc;
         }, {});
@@ -40,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Deuxième graphique : Répartition des groupes ciblés
+        
 const countsGroupesCibles = data.reduce((acc, row) => {
-const groupeCible = row['Groupe ciblé']; // Remplacez par la colonne réelle
+const groupeCible = row['Groupe ciblé']; 
 acc[groupeCible] = (acc[groupeCible] || 0) + 1;
 return acc;
 }, {});
@@ -51,7 +50,7 @@ const totalGroupesCibles = Object.values(countsGroupesCibles).reduce((sum, count
 const labelsGroupesCibles = Object.keys(countsGroupesCibles);
 const percentagesGroupesCibles = labelsGroupesCibles.map(label => ((countsGroupesCibles[label] / totalGroupesCibles) * 100).toFixed(2));
 
-// Regrouper les groupes avec moins de 5% dans un groupe "Autre"
+
 let otherCountGroupesCibles = 0;
 const newLabelsGroupesCibles = [];
 const newPercentagesGroupesCibles = [];
@@ -62,12 +61,11 @@ const colorsGroupesCibles = [
 'rgba(201, 203, 207, 0.6)', 'rgba(102, 204, 0, 0.6)'
 ];
 
-// Parcours des données pour créer les nouvelles listes avec le groupe "Autre"
+
 labelsGroupesCibles.forEach((label, index) => {
 const percentage = parseFloat(percentagesGroupesCibles[index]);
 
 if (percentage < 5) {
-// Ajouter à "Autre"
 otherCountGroupesCibles += countsGroupesCibles[label];
 } else {
 newLabelsGroupesCibles.push(label);
@@ -76,11 +74,11 @@ newBackgroundColorsGroupesCibles.push(colorsGroupesCibles[newLabelsGroupesCibles
 }
 });
 
-// Ajouter "Autre" si nécessaire
+
 if (otherCountGroupesCibles > 0) {
 newLabelsGroupesCibles.push('Autre');
 newPercentagesGroupesCibles.push(((otherCountGroupesCibles / totalGroupesCibles) * 100).toFixed(2));
-newBackgroundColorsGroupesCibles.push('rgba(0, 0, 0, 0.6)'); // Couleur pour "Autre"
+newBackgroundColorsGroupesCibles.push('rgba(0, 0, 0, 0.6)'); 
 }
 
 const ctxGroupesCibles = document.getElementById('groupecible').getContext('2d');
@@ -107,9 +105,9 @@ plugins: {
 
 
 
-// Deuxième graphique : Répartition des modes d'action
+
 const countsModesAction = data.reduce((acc, row) => {
-const modeAction = row['Mode d\'action']; // Remplacez par la colonne réelle
+const modeAction = row['Mode d\'action']; 
 acc[modeAction] = (acc[modeAction] || 0) + 1;
 return acc;
 }, {});
@@ -118,7 +116,7 @@ const totalModesAction = Object.values(countsModesAction).reduce((sum, count) =>
 const labelsModesAction = Object.keys(countsModesAction);
 const percentagesModesAction = labelsModesAction.map(label => ((countsModesAction[label] / totalModesAction) * 100).toFixed(2));
 
-// Regrouper les modes d'action avec moins de 5% dans un groupe "Autre"
+
 let otherCountModesAction = 0;
 const newLabelsModesAction = [];
 const newPercentagesModesAction = [];
@@ -129,12 +127,11 @@ const colorsModesAction = [
 'rgba(201, 203, 207, 0.6)', 'rgba(102, 204, 0, 0.6)'
 ];
 
-// Parcours des données pour créer les nouvelles listes avec le groupe "Autre"
+
 labelsModesAction.forEach((label, index) => {
 const percentage = parseFloat(percentagesModesAction[index]);
 
 if (percentage < 4) {
-// Ajouter à "Autre"
 otherCountModesAction += countsModesAction[label];
 } else {
 newLabelsModesAction.push(label);
@@ -143,11 +140,10 @@ newBackgroundColorsModesAction.push(colorsModesAction[newLabelsModesAction.lengt
 }
 });
 
-// Ajouter "Autre" si nécessaire
 if (otherCountModesAction > 0) {
 newLabelsModesAction.push('Autre');
 newPercentagesModesAction.push(((otherCountModesAction / totalModesAction) * 100).toFixed(2));
-newBackgroundColorsModesAction.push('rgba(0, 0, 0, 0.6)'); // Couleur pour "Autre"
+newBackgroundColorsModesAction.push('rgba(0, 0, 0, 0.6)'); 
 }
 
 const ctxModesAction = document.getElementById('modedaction').getContext('2d');

@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les parties traitées</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles5.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
-  <!-- Header -->
   <header class="navbar navbar-expand-lg bg-white shadow sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html" style="color: white;">BP</a>
@@ -21,11 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#hero" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About</a></li>
-          <!-- Menu déroulant -->
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);">About</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);">
               Parties
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,12 +34,11 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="#contact" style="margin-right: 12px; font-size: 23px; color: rgb(0, 0, 0);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Contact</a></li>
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);">Contact</a></li>
         </ul>
       </div>
   </header>
 
-  <!-- Hero Section -->
   <section id="hero" class="d-flex align-items-center bg-success text-white">
     <div class="container text-center">
       <h1 class="display-4 fw-bold">Le Biocontrôle en Action : Parties et Méthodes</h1>
@@ -52,11 +48,10 @@
     </div>
   </section>
 
-  <!-- Full Soil Section -->
+  <!-- Section 1 : Introduction -->
   <section id="intro" class="py-5">
     <div class="container">
         <div class="row align-items-center">
-            <!-- Texte à gauche -->
             <div class="col-md-6">
               <p>
                 Face à la nécessité d’une agriculture durable, le biocontrôle se distingue comme une alternative respectueuse de l’environnement aux solutions chimiques traditionnelles. En ciblant spécifiquement les parties aériennes (feuilles, tiges) et souterraines (racines, sol), il offre des traitements adaptés pour une gestion efficace des cultures.
@@ -72,7 +67,6 @@
                 <li>Démontrer comment une application ciblée peut révolutionner les pratiques agricoles grâce à une synergie entre science et terrain.</li>
             </ul>            
             </div>
-            <!-- Image à droite avec offset -->
             <div class="col-md-5 offset-md-1 text-center">
                 <img src="img/Partie_traitées.png" alt="Parties traitées" class="img-fluid">
             </div>
@@ -80,10 +74,10 @@
     </div>
 </section>
 
+<!-- Section 2 : Parties traitées -->
 <section id="part_ext" class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Texte à gauche -->
       <h1 class="text-center">Les parties traitées</h1>
       <div class="col-md-6">
         <h3 class="text-center mb-4">Parties aériennes</h3>
@@ -105,7 +99,6 @@
           <li><strong>Traitements du sol :</strong> L'application de solutions naturelles, comme des extraits végétaux, renforce la résistance des plantes aux maladies du sol et améliore la structure du sol.</li>
         </ul>
       </div>
-      <!-- Graphique 1 à droite -->
       <div class="col-md-6">
         <canvas id="partiesTraiteesChart"></canvas>
       </div>
@@ -113,10 +106,10 @@
   </div>
 </section>
 
+<!-- Section 3 : Modes d'action -->
 <section id="mode_action" class="py-5 ">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Texte à gauche -->
       <h2 class="text-center mb-4">Modes d’action des biocontrôles</h2>
       <div class="col-md-6">
         <ul>
@@ -133,8 +126,6 @@
           <li><strong>Autre :</strong> Comprend des fongicides de contact multi-sites, agissant simultanément sur plusieurs points pour stopper les pathogènes tout en limitant les résistances.</li>
         </ul>
       </div>
-      
-      <!-- Graphique 3 à droite -->
       <div class="col-md-6">
         <canvas id="modedaction"></canvas>
       </div>
@@ -142,16 +133,14 @@
   </div>
 </section>
 
-
+<!-- Section 4 : Groupes ciblés -->
 <section id="groupe_cible" class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Graphique 3 à gauche -->
       <div class="col-md-6">
         <canvas id="groupecible"></canvas>
       </div>
 
-      <!-- Texte à droite -->
       <div class="col-md-6">
         <h2 class="text-center mb-4">Groupes Ciblés du Biocontrôle</h2>
         <ul>
@@ -176,33 +165,26 @@
 
 
 <!-- Section 5 : Conclusion et perspectives -->
-<section id="conclusion" class="py-5 bg-light">
-<div class="container my-5 ">
-  <h2 class="text-center mb-4">Conclusion et perspectives</h2>
-
-  <div class="row">
-    <!-- Synthèse des avantages des traitements spécialisés à gauche -->
-    <div class="col-md-6">
-      <h4>Synthèse des avantages des traitements spécialisés (aérienne et sol)</h4>
-      <p>Les traitements spécialisés, qu'ils soient aériens ou souterrains, offrent des avantages considérables pour la protection des cultures. Les traitements aériens, comme l'utilisation de trichogrammes, ciblent les nuisibles sur les parties visibles des plantes, réduisant ainsi la dépendance aux produits chimiques. D'autre part, les traitements souterrains, tels que l'application de champignons bénéfiques, offrent une solution efficace pour lutter contre les pathogènes du sol, augmentant ainsi les rendements tout en préservant la santé des plantes.</p>
-    </div>
-
-    <!-- Mise en avant de l’importance d’une approche combinée à droite -->
-    <div class="col-md-6">
-      <h4>Mise en avant de l’importance d’une approche combinée</h4>
-      <p>Une approche combinée, intégrant les traitements aériens et souterrains, permet de maximiser l'efficacité des pratiques de lutte biologique. Cette méthode offre une protection complète des cultures en agissant simultanément sur les ravageurs et les pathogènes, tout en minimisant les risques pour l'environnement et la biodiversité. L'intégration de ces solutions contribue à la durabilité des systèmes agricoles et à la réduction de l'usage des produits chimiques.</p>
-    </div>
-  </div>
-
-  <!-- Perspectives centrées -->
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-8 text-center">
-      <h4>Perspectives : développement de solutions innovantes et durables</h4>
-      <p>Les perspectives dans le domaine des traitements biologiques sont prometteuses, avec des recherches en cours pour développer des solutions toujours plus innovantes et durables. L'amélioration des techniques de traitement, ainsi que l'intégration de nouvelles approches telles que l'usage de micro-organismes ciblés, pourrait transformer l'agriculture durable. L'innovation continue dans ce secteur offre un potentiel considérable pour assurer la sécurité alimentaire tout en préservant l'environnement.</p>
+<section id="conclusion" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12">
+        <h2 class="text-center mb-4">Conclusion</h2>
+        <p>
+          Le biocontrôle offre une alternative prometteuse aux solutions chimiques traditionnelles en agriculture, en s'appuyant sur des approches écologiques et durables. 
+          En combinant des traitements ciblés et des modes d’action variés, il permet de préserver les écosystèmes tout en améliorant la productivité agricole.
+        </p>
+        <p>
+          Ce modèle innovant illustre une transition vers une agriculture plus respectueuse de l’environnement, où science et pratiques terrain s’allient pour répondre aux défis actuels et futurs.
+        </p>
+        <p class="text-center">
+          Ensemble, cultivons un avenir durable.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 </section>
+
 </div>
 
 <!-- Footer Section -->
